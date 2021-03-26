@@ -5,6 +5,7 @@ int main(){
     short int N = 150; // number of elements
     short int sum = 0;
     short int target = N*(N+1)/2;
+    printf("Let the number of elements N = %i\n", N);
     for(unsigned i = 1; i <= N; ++i){
         sum+=i;
     }
