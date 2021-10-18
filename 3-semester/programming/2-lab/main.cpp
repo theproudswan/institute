@@ -83,7 +83,7 @@ pair<int, uint> BetterLinearSearch(T* input, size_t size, T key){
     PRINT_FUNC_NAME(__func__); 
     uint comparison = 0;
     for (size_t i = 0; i < size; ++i){
-        comparison++;
+        comparison += 2;
         if(input[i] == key) return {i, comparison};
     }
     return {NOT_FOUND, comparison};
@@ -112,9 +112,9 @@ pair<int, uint> AnotherLinearSearch(T* input, size_t size, T key){
     uint comparison = 0;
     size_t i = 0;
     while(key >= input[i]){
-        comparison += 2;
-        if (input[i] == key) return {i, comparison};
         i++;
     }
+    comparison = i + 1;
+    if (input[i] == key) return {i, comparison};
     return {NOT_FOUND, comparison};
 }
